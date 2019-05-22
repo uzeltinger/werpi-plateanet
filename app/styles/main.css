@@ -1259,11 +1259,11 @@ h1.navbar-brand {
     margin-top: 10px;
 }
 .btn-vehicle{
-    margin-right: 3%;
-    margin-left: 3%;
+    margin-right: 5%;
+    margin-left: 5%;
     display: inline;
     padding: 3px !important;
-    width: 13% !important;
+    width: 14% !important;
     margin-bottom: 10px !important;
     cursor: pointer;
     outline: none;
@@ -2898,4 +2898,11 @@ img.ticket {
     margin-top: 40px;
     text-align: center;
     width: 100%;
+}
+label.importe {
+    font-weight: 500;
+}
+label.importe h3{
+    font-weight: 500;
+    font-size: 20px;
 }

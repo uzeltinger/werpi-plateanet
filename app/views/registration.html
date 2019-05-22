@@ -21,7 +21,7 @@
                             <div ng-if="registrationStatus==1" class="form-top-left-centered">
                                 <h3>Su registro fue confirmado con exito</h3>
                                 <!--p>Ya puede <a href='#/login'>ingresar</a> al sitio con su usuario y contrasena</p-->
-                                <p>Ahora logueate para continuar</p>
+                                <p><a href="#" ng-click="goReservation()">Ahora reservá tu estacionamiento</a></p>
                             </div>
                             <div ng-if="registrationStatus==-1" class="form-top-left-centered">
                                 <h3>No fue posible confirmar su registro</h3>

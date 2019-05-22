@@ -55,7 +55,8 @@
             licensePlate: $scope.licensePlate,
             email: $scope.email,
             password: $scope.password,
-            registrationDestination: "PLATEANET"
+            registrationDestination: "PLATEANET",
+						postRegistrationAction: window.sessionStorage.getItem('reservarUrl')
           };
           $scope.loading = true;
           api.registration.save('', data).$promise.then(function (response) {

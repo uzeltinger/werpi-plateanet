@@ -29,6 +29,8 @@
 	   readonly="true"
 	   min-date="mindate"
 	><br>
+
+	<div style="visibility: hidden; height: 1px; overflow: hidden">
 	<label>Fecha hasta</label>
 	  <input
 			  type="text"
@@ -43,6 +45,7 @@
 			  position="bottom"
 			  disabled="disabled">
 	  <br>
+	</div>
 
 	<label>Vehiculo</label>
 
@@ -59,9 +62,9 @@
 		  <div class="btn-vehicle btn-radio" data-toggle="tooltip" data-placement="bottom" title="Camion" ng-click='changeVehicleType(4)' ng-class="{'camion-activo': vehicleTypeId == 4,'camion-no-activo': vehicleTypeId != 4}">
 		  	<div></div>
 		  </div>
-		  <div class="btn-vehicle btn-radio" data-toggle="tooltip" data-placement="bottom" title="Bicicleta" ng-click='changeVehicleType(5)' ng-class="{'bici-activo': vehicleTypeId == 5,'bici-no-activo': vehicleTypeId != 5}">
+		  <!--<div class="btn-vehicle btn-radio" data-toggle="tooltip" data-placement="bottom" title="Bicicleta" ng-click='changeVehicleType(5)' ng-class="{'bici-activo': vehicleTypeId == 5,'bici-no-activo': vehicleTypeId != 5}">
 		  	<div></div>
-		  </div>
+		  </div>-->
 	</div>
 
 	<br>
@@ -83,9 +86,12 @@
    	<a style="display:inline-flex; width:10%; margin-left:40px;" class="pay-button" ng-click="applyVoucher()"><img src="images/confirmar.svg">Aplicar</a></div>
 	<br-->
 
-
-	<label ng-show="currentQuotation.price>=0&&currentQuotation.netDiscount==0"><h3 style="display:inline;font-weight:bold;">Precio: ${{currentQuotation.price}}</h3></label>
-	<label ng-show="currentQuotation.price>=0&&currentQuotation.netDiscount>0"><h3 style="display:inline;font-weight:bold;">Precio:</h3>&nbsp;&nbsp;<h3 style="display:inline;color:#30b736;font-weight:bold;">${{currentQuotation.price}}</h3>&nbsp;&nbsp;<h3 style="text-decoration:line-through;display:inline;color:#e93030;font-weight:bold;">${{currentQuotation.price+currentQuotation.netDiscount}}</h3></label>
+	<label class="importe" ng-show="currentQuotation.price>=0">
+		Precio Clientes Plateanet<br>
+		Beneficio exclusivo estadía completa:<br>
+	</label>
+	<label class="importe" ng-show="currentQuotation.price>=0&&currentQuotation.netDiscount==0"><h3 style="display:inline">Importe: ${{currentQuotation.price}}</h3></label>
+	<label class="importe" ng-show="currentQuotation.price>=0&&currentQuotation.netDiscount>0"><h3 style="display:inline;">Importe:</h3>&nbsp;&nbsp;<h3 style="display:inline;color:#30b736;font-weight:bold;">${{currentQuotation.price}}</h3>&nbsp;&nbsp;<h3 style="text-decoration:line-through;display:inline;color:#e93030;font-weight:bold;">${{currentQuotation.price+currentQuotation.netDiscount}}</h3></label>
 	
 	
 	<br>
