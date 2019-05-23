@@ -26,12 +26,18 @@ angular.module('werpiApp')
         $scope.urlIdTeatro = $window.sessionStorage.getItem('urlIdTeatro');
       }
     }
+    
+    $window.sessionStorage.setItem("reservarUrl",'');
 
     $scope.urlfuncion = null;
 
+    moment.locale('es');
+
     if ($location.search().funcion) {
       $scope.urlfuncion = $location.search().funcion;
-      $window.sessionStorage.setItem("urlfuncion", $scope.urlfuncion);
+      let momentDateFrom = moment($scope.urlfuncion,'DD-MM-YYYY HH:mm');
+      momentDateFrom.subtract(2,"h");
+      $window.sessionStorage.setItem("urlfuncion", momentDateFrom.toDate());
     } else {
       if ($window.sessionStorage.getItem('urlfuncion')) {
         $scope.urlfuncion = $window.sessionStorage.getItem('urlfuncion');
