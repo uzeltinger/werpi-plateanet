@@ -12,8 +12,9 @@ angular.module('werpiApp')
   	if ($scope.token){
   		var dataGet = { token : $scope.token };
   			  api.registration.get(dataGet).$promise.then(function(response) {
+            console.log("response",response);
           $scope.registrationStatus=1;
-          $scope.postRegistrationAction = response.postRegistrationAction;
+          $scope.postRegistrationAction = response.data.post_registration_action;
   		   },function(response){
             $scope.registrationStatus=-1;
          }
@@ -24,6 +25,7 @@ angular.module('werpiApp')
     }
 
     $scope.goReservation = function(){
+      console.log("postRegistrationAction",$scope.postRegistrationAction);
       if($scope.postRegistrationAction!=null){
         window.location.href = $scope.postRegistrationAction;
       }
