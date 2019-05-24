@@ -8,8 +8,7 @@
  * Controller of the werpiApp
  */
 angular.module('werpiApp')
-  .controller('MainCtrl', function ($scope, $rootScope, $location, $filter, api, $window, SELLER) {
-
+  .controller('MainCtrl', function ($scope, $rootScope, $location, $filter, api, $window, SELLER) {    
     $scope.parkings = [];
     $scope.myPosition = { long: -58.3810793, lat: -34.606510 };
     $scope.showAll = 4;
@@ -93,8 +92,24 @@ angular.module('werpiApp')
     }
 
     $scope.reservar = function (parking) {
-      window.sessionStorage.setItem('reservarUrl', '#/buy/?parkingId=' + parking.parkingId + '&lat=' + $scope.myPosition.lat + '&lng=' + $scope.myPosition.long);
-      window.location.href = '#/buy/?parkingId=' + parking.parkingId + '&lat=' + $scope.myPosition.lat + '&lng=' + $scope.myPosition.long;
+      let urlfuncion = "";
+      if ($window.sessionStorage.getItem('urlfuncion')) {
+        urlfuncion = $window.sessionStorage.getItem('urlfuncion');
+      }
+      let urlIdTeatro = "";
+      if ($window.sessionStorage.getItem('urlIdTeatro')) {
+        urlIdTeatro = $window.sessionStorage.getItem('urlIdTeatro');
+      }
+      let reservarUrl = '#/buy/?parkingId=' + parking.parkingId + '&lat=' + $scope.myPosition.lat + '&lng=' + $scope.myPosition.long;
+      let postRegistrationAction ={
+        "urlfuncion": urlfuncion,
+        "urlIdTeatro": urlIdTeatro,
+        "reservarUrl": reservarUrl
+      }
+      window.sessionStorage.setItem('postRegistrationAction', JSON.stringify(postRegistrationAction));
+console.log("postRegistrationAction",postRegistrationAction);
+      window.sessionStorage.setItem('reservarUrl', reservarUrl);
+      window.location.href = reservarUrl;
     }
 
     $scope.verMas = function () {

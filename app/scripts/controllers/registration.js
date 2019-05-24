@@ -27,7 +27,17 @@ angular.module('werpiApp')
     $scope.goReservation = function(){
       console.log("postRegistrationAction",$scope.postRegistrationAction);
       if($scope.postRegistrationAction!=null){
-        window.location.href = $scope.postRegistrationAction;
+        let postRegistrationAction = JSON.parse($scope.postRegistrationAction);
+        if(postRegistrationAction.urlfuncion){
+          window.sessionStorage.setItem('urlfuncion', postRegistrationAction.urlfuncion);
+        }
+        if(postRegistrationAction.urlIdTeatro){
+        window.sessionStorage.setItem('urlIdTeatro', postRegistrationAction.urlIdTeatro);
+        }        
+        if(postRegistrationAction.reservarUrl){
+        window.sessionStorage.setItem('reservarUrl', postRegistrationAction.reservarUrl);
+        }
+        window.location.href = postRegistrationAction.reservarUrl;
       }
     }
 
