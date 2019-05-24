@@ -35,9 +35,12 @@ angular.module('werpiApp')
 
     if ($location.search().funcion) {
       $scope.urlfuncion = $location.search().funcion;
+      //console.log("$scope.urlfuncion",$scope.urlfuncion);
       let momentDateFrom = moment($scope.urlfuncion,'DD-MM-YYYY HH:mm');
-      momentDateFrom.subtract(2,"h");
-      $window.sessionStorage.setItem("urlfuncion", momentDateFrom.toDate());
+      momentDateFrom.subtract(2,"h");      
+      let menosDosHoras = moment(momentDateFrom).format("DD-MM-YYYY HH:mm");
+      //console.log("menosDosHoras",menosDosHoras);
+      $window.sessionStorage.setItem("urlfuncion", menosDosHoras);
     } else {
       if ($window.sessionStorage.getItem('urlfuncion')) {
         $scope.urlfuncion = $window.sessionStorage.getItem('urlfuncion');
