@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="contact-details">
+    <div class="contact-details" ng-if="!bookingDetail">
       <div class="col-md-2"><!-- Alignment space --></div>
       <div ng-show="bookings.length==0" class="col-md-8 wow animated fadeInLeft">
         <h4>Todavia no realizaste una reserva! Este es un buen momento, <a href="#/">compra tu estadia ahora!</a></h4>

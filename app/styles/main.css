@@ -35,6 +35,7 @@
   text-align: center;  
   background: #ffffff url(/images/werpi-parking-cars-b.png);
   background-size: cover;
+  z-index: 1112;
 }
 
 .buy-success-message h3{
@@ -1936,14 +1937,14 @@ textarea.form-control {
 }
 
 .booking-detail {
-    position: fixed;
+    /*position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0;*/
     background-color: #fff;
-    padding: 64px 22px;
-    overflow: auto;
+    padding: 0px 22px;
+    /*overflow: auto;*/
 }
 
 .booking-detail-close-wrapper span {
@@ -2677,7 +2678,7 @@ nav.menu-mobile-back{
 
 @media only screen and (min-width: 480px) {
     .booking-detail {
-        padding-top: 80px;
+        padding-top: 0px;
     }
 }
 
@@ -2873,7 +2874,7 @@ img.ticket {
     z-index: 5;
 }
 .home-container {
-    margin-top: 230px;
+    margin-top: 250px;
 }
 .plateanet-home .plateanet-home-banner h3{
     margin: 0px;
