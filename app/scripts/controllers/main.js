@@ -113,6 +113,6 @@ console.log("postRegistrationAction",postRegistrationAction);
     }
 
     $scope.verMas = function () {
-      $scope.showAll = 999;
+      $scope.showAll = $scope.totalParkings;
     }
   });
