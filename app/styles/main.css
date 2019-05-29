@@ -1260,11 +1260,11 @@ h1.navbar-brand {
     margin-top: 10px;
 }
 .btn-vehicle{
-    margin-right: 5%;
-    margin-left: 5%;
+    margin-right: 6%;
+    margin-left: 6%;
     display: inline;
     padding: 3px !important;
-    width: 14% !important;
+    width: 20% !important;
     margin-bottom: 10px !important;
     cursor: pointer;
     outline: none;
