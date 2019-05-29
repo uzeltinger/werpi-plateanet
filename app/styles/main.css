@@ -681,6 +681,9 @@ h1, h2, h3, h4, h5, h6,
 #global-back-btn {
     margin-left: 30px;
     vertical-align: middle;
+    color: #f16716;
+    cursor: pointer;
+    border: 1px solid #f16716;
 }
 
 #main-content {
@@ -1221,13 +1224,13 @@ h1.navbar-brand {
     transition: 0.3s;
     border : 0px;
     background-color: white;
-}
+}/*
  .pay-button:hover{
     opacity: 0.7;
     }
 .pay-button img{
     width: 3em;
-}
+}*/
 .reservation-date h3{
     text-align: center;
     text-transform: uppercase;
@@ -2917,4 +2920,14 @@ label.importe h3{
 }
 .goReservation {
     cursor: pointer;
+}
+.btn-orange {    
+    color: #fff;
+    background-color: #F37126;
+    border-color: #f16716;
+    padding: 12px 24px;
+}
+.btn-orange:hover {
+    color: #fff;
+    background-color: #f16716;    
 }

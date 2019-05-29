@@ -101,9 +101,12 @@
  	</div>
 	
 
-   <div class="col-xs-12 reservation-date__confirmation"> 
-   		<a class="pay-button" id="a-reservar" ng-click="goStepTwo()"><img src="images/reservar.svg">Reservar</a>
-   	</div>
+   <div class="col-xs-12 reservation-date__confirmation">
+	   <div class="pay-button">		 
+   			<a class="btn btn-orange" id="a-reservar" ng-click="goStepTwo()">Reservar</a>
+	   </div>
+	</div>
+	   
 	<div class="col-xs-12">
 		<p><br></p>
 	</div>
@@ -129,7 +132,9 @@
 					</div>
 
      	<div ng-show="currentQuotation.price==0" class="col-xs-12 reservation-date__confirmation">
-     		<a class="pay-button" id="a-confirmar" ng-click="processFreePay()"><img src="images/pagar.svg">Confirmar</a>
+			<div class="pay-button">
+			 	<a class="btn btn-orange" id="a-confirmar" ng-click="processFreePay()">Confirmar</a>
+			</div>
      	</div>
 
 	<div ng-show="currentQuotation.price>0" class="col-md-7 contact-form wow animated fadeInLeft">
@@ -169,8 +174,10 @@
 				            </div>
 
      	<div class="col-xs-12 reservation-date__confirmation">
-     		<!--a class="pay-button" id="btn-pay" ng-click="processPay()"><img src="images/pagar.svg">Pagar</a-->
-     		<button type="submit" class="pay-button" id="btn-pay"><img src="images/pagar.svg">Pagar</button>
+			<!--a class="pay-button" id="btn-pay" ng-click="processPay()"><img src="images/pagar.svg">Pagar</a-->
+			<div class="pay-button">
+			 	<button type="submit" class="btn btn-orange" id="btn-pay">Pagar</button>
+			</div>
      	</div>
   	</div>
 
