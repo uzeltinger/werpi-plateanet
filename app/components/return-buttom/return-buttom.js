@@ -9,6 +9,7 @@ angular.module("returnButtom", [])
         event.preventDefault();
         console.log("$rootScope.paySection", $rootScope.paySection);
         if($rootScope.paySection === 'step-two' && !$rootScope.estacionarSection) {
+          $scope.quotationId = null;
           $rootScope.paySection = 'step-one';
           return;
         }
