@@ -101,10 +101,13 @@
  	</div>
 	
 
-   <div class="col-xs-12 reservation-date__confirmation">
-	   <div class="pay-button">		 
+	<div class="col-xs-6">
+		<return-buttom></return-buttom>
+	</div>
+   	<div class="col-xs-6">
+	   <div class="pares-button pares-button-right">
    			<a class="btn btn-orange" id="a-reservar" ng-click="goStepTwo()">Reservar</a>
-	   </div>
+	   </div>	   
 	</div>
 	   
 	<div class="col-xs-12">
@@ -131,11 +134,16 @@
 						</address>
 					</div>
 
-     	<div ng-show="currentQuotation.price==0" class="col-xs-12 reservation-date__confirmation">
-			<div class="pay-button">
-			 	<a class="btn btn-orange" id="a-confirmar" ng-click="processFreePay()">Confirmar</a>
-			</div>
-     	</div>
+					<div ng-show="currentQuotation.price==0" style="margin-top: 20px">
+						<div class="col-xs-6">
+							<return-buttom></return-buttom>
+						</div>
+						<div class="col-xs-6">
+							<div class="pares-button pares-button-right">
+								<a class="btn btn-orange" id="a-confirmar" ng-click="processFreePay()">Confirmar</a>
+							</div>	   
+						</div>			
+					</div>
 
 	<div ng-show="currentQuotation.price>0" class="col-md-7 contact-form wow animated fadeInLeft">
 					<div class="wow animated fadeInDown contact-details">
@@ -173,11 +181,17 @@
 				                <input type="number" inputmode="numeric" pattern="[0-9]*" class="form-control"  id="docNumber" data-checkout="docNumber" placeholder="" required/>
 				            </div>
 
-     	<div class="col-xs-12 reservation-date__confirmation">
+     	<div style="margin-top: 20px">
+				<div class="col-xs-6">
+					<return-buttom></return-buttom>
+				</div>
+				<div class="col-xs-6">
+					<div class="pares-button pares-button-right">
+						<button type="submit" class="btn btn-orange" id="btn-pay">Pagar</button>
+					</div>	   
+				</div>			
 			<!--a class="pay-button" id="btn-pay" ng-click="processPay()"><img src="images/pagar.svg">Pagar</a-->
-			<div class="pay-button">
-			 	<button type="submit" class="btn btn-orange" id="btn-pay">Pagar</button>
-			</div>
+			
      	</div>
   	</div>
 

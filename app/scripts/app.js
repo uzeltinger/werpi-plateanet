@@ -26,7 +26,8 @@ angular
     'app.directives',
     'app.directives.limitTo',
     'app.services',
-    'app.constants'
+    'app.constants',
+    'returnButtom'
   ])
 
 //.constant('API_ENDPOINT', {url: 'http://localhost/dt/werpi-web/desa/source/api/v1.0/'})
