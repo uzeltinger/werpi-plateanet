@@ -23,8 +23,8 @@
               <div class="reserva-cancelada">RESERVA <br/>CANCELADA</div>
             </td>
             <td ng-if="bookingItem.booking.bookingStatus.bookingStatusId!=4" ng-click="showBooking($index)" class="col-md-2 col-sm-2 tcenter ver-td">
-              <img class="ticket" src="images/ticket.svg">
-              <p>VER</p>
+              <!--<img class="ticket" src="images/ticket.svg"><p>VER</p>-->
+              <button type="button" ng-click="showBooking($index)" class="btn btn-orange">VER</button>
             </td>
           </tbody>
         </table>
@@ -44,11 +44,19 @@
           <p><strong>Estado:</strong>{{booking.bookingStatus.bookingStatusDescription}}</p>
           <p><strong>Fecha y hora de ingreso: </strong>{{booking.formattedStartDate.toLocaleString()}}</p>
           <p><strong>Fecha y hora de salida: </strong>{{booking.formattedEndDate.toLocaleString()}}</p>
-          <p><strong>Valor: $</strong>{{booking.price}}</p>
-          
-          <div class="col-xs-12 bottom-button-container"> 
-            <a class="bottom-button" id="btn-reenviar-ticket" ng-click="resendVoucher()"><img src="images/mail.png">Reenviar</a>
-          </div>
+          <p><strong>Valor: $</strong>{{booking.price}}</p>                    
+
+          <div class="row" style="margin-top: 20px">
+              <div class="col-xs-6">
+                <return-buttom></return-buttom>
+              </div>
+              <div class="col-xs-6">
+                <div class="pares-button pares-button-right">
+                    <a class="btn btn-orange" id="btn-reenviar-ticket" ng-click="resendVoucher()">Reenviar</a>
+                </div>	   
+              </div>            
+           </div>
+
         </address>
       </div>
 
@@ -72,10 +80,20 @@
               <h4 class="text-center"><strong>Estacionamiento</strong></h4>
               <p><strong>Direccion: </strong>{{booking.parking.address.street + " " + booking.parking.address.number + ", " + booking.parking.address.province.provinceDescription;}}</p>
               <p><strong>Fecha: </strong>{{booking.formattedStartDate.toLocaleString()}}</p>
-              <p><strong>Valor: </strong>${{booking.price}}</p>
-              <div class="col-xs-12 bottom-button-container"> 
-                <a class="bottom-button" id="btn-finalizar" ng-click="goHome()"><img src="images/confirmar.svg">Finalizar</a>
-              </div>
+              <p><strong>Valor: </strong>${{booking.price}}</p>             
+              
+              <div class="row" style="margin-top: 20px">
+                  <div class="col-xs-6">
+                    
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="pares-button pares-button-right">
+                        <a class="btn btn-orange" id="btn-finalizar" ng-click="goHome()">Finalizar</a>
+                    </div>	   
+                  </div>			
+                <!--a class="pay-button" id="btn-pay" ng-click="processPay()"><img src="images/pagar.svg">Pagar</a-->
+                
+               </div>
             </div>
           </div>
           
